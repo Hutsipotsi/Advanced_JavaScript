@@ -1,62 +1,126 @@
-/*let xmlhttp = new XMLHttpRequest();
-xmlhttp.open("GET", 'https://catfact.ninja/fact?max_length=140', true)
-//-header ,'Accept: application/json'
+// Button shows catfacts if user clicks it.
+document.querySelector("#factButton").addEventListener("click", factFunction);
 
-// Send request
-xmlhttp.send();
+function factFunction() {
 
-// Event handler
-xmlhttp.onreadystatechange=function() {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "https://catfact.ninja/fact", true)
 
-    if(xmlhttp.readyState === 4 && xmlhttp.status === 200)
-    {        
-        document.getElementById("facts").innerHTML = xmlhttp.responseText
-    }
-
-}*/
-
-let xmlhttp = new XMLHttpRequest();
-xmlhttp.open("GET", "https://catfact.ninja/fact", true)
-//https://catfact.ninja/facts
-//https://cat-fact.herokuapp.com/facts
-
-// Send request
-xmlhttp.send();
-
-// Event handler
-xmlhttp.onreadystatechange=function() {
-
-    if(xmlhttp.readyState === 4 && xmlhttp.status === 200)
-    {        
-        document.getElementById("facts2").innerHTML = xmlhttp.responseText
-    }
-
-  }
-/*
-  function ajax_get(url, callback) {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        console.log('responseText:' + xmlhttp.responseText);
-        try {
-          var data = JSON.parse(xmlhttp.responseText);
-        } catch (err) {
-          console.log(err.message + " in " + xmlhttp.responseText);
-          return;
-        }
-        callback(data);
-      }
-    };
-  
-    xmlhttp.open("GET", url, true);
+    // Send request
     xmlhttp.send();
-  }
-  
-  ajax_get('https://api.thecatapi.com/v1/images/search?size=full', function(data) {
-    document.getElementById("id").innerHTML = data[0]["id"];
-    document.getElementById("url").innerHTML = data[0]["url"];
-  
-    var html = '<img src="' + data[0]["url"] + '">';
-    document.getElementById("image").innerHTML = html;
-  });
-  */
+
+    // Event handler
+    xmlhttp.onreadystatechange = function () {
+
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            document.getElementById("facts").innerHTML = xmlhttp.responseText
+        }
+
+    }
+}
+
+// Made http request
+let xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", "http://hp-api.herokuapp.com/api/characters", true)
+
+// Send request
+xmlhttp.send();
+
+// Event handler
+xmlhttp.onreadystatechange = function () {
+
+
+    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+        let answerObject = JSON.parse(this.response);
+
+        document.getElementById("facts2").innerHTML = answerObject[answerObject.length - 380].name
+        
+        let characters = '<img src ="http://hp-api.herokuapp.com/images/norris.JPG">';
+        document.getElementById("facts3").innerHTML = characters;
+    }
+
+}
+
+// Button shows feedback for user.
+document.querySelector("#positive").addEventListener("click", posFunction);
+
+function posFunction() {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "http://hp-api.herokuapp.com/api/characters", true)
+
+    // Send request
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function () {
+
+
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            let answerObject = JSON.parse(this.response);
+
+            document.getElementById("feedback").innerHTML = "<p>Hienoa että sait hymyn huulillesi<p>" + answerObject[answerObject.length - 393].name
+
+            let characters = '<img src ="http://hp-api.herokuapp.com/images/luna.jpg">';
+            document.getElementById("feedbackImage").innerHTML = characters;
+        }
+    }
+}
+
+// Button shows feedback for user
+document.querySelector("#neutral").addEventListener("click", neutFunction);
+
+function neutFunction() {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "http://hp-api.herokuapp.com/api/characters", true)
+
+    // Send request
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function () {
+
+
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            let answerObject = JSON.parse(this.response);
+
+            document.getElementById("feedback").innerHTML = "<p>Ehkäpä ensi keralla onnistumme paremmin<p>" + answerObject[answerObject.length - 384].name
+
+            let characters = '<img src ="http://hp-api.herokuapp.com/images/umbridge.jpg">';
+            document.getElementById("feedbackImage").innerHTML = characters;
+        }
+    }
+}
+
+document.querySelector("#negative").addEventListener("click", negaFunction);
+
+function negaFunction() {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "http://hp-api.herokuapp.com/api/characters", true)
+
+    // Send request
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function () {
+
+
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            let answerObject = JSON.parse(this.response);
+
+            document.getElementById("feedback").innerHTML = "<p>Missä epäonnistumme?<p>" + answerObject[answerObject.length - 399].name
+
+            let characters = '<img src ="http://hp-api.herokuapp.com/images/mcgonagall.jpg">';
+            document.getElementById("feedbackImage").innerHTML = characters;
+        }
+    }
+}
+
+// Button shows feedback input so user can send message.
+document.querySelector("#negative").addEventListener("click", negaFeedFunction);
+
+function negaFeedFunction() {
+    document.getElementById("feedback2").innerHTML = "<p>Lähettämällä palautetta autat meitä parantamaan sivustoamme! <p> <input type='text' id='feedbackText'> <button onclick='sendFeed()' id='sendButton'>Lähetä</button>"
+}
+
+// Shows alert when send message.
+function sendFeed() {
+    alert("Palautteesi on lähetetty onnistuneesti!")
+    document.getElementById("feedback2").innerHTML = "";
+}
