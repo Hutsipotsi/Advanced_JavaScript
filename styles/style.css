@@ -1,13 +1,185 @@
 * {
+/*    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
     font-family: 'Indie Flower', cursive;
     font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    color: white;
+}
+
+#content {
+    height: 100%;
+    background-color: #4247b3;
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
+}
+
+button {
+    color: black;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: black;
+}
+
+header, footer {
+    background-color: #7a00cc;
+    grid-column: 1/5;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+header {
+    display: flex;
+    height: 100px;
+}
+
+header h1 {
+    margin-left: 30px;
+}
+
+article {
+    background-color: #7D55E6;
+    grid-column: 2/5;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+nav {
+    background-color: #7a00cc;
+    grid-column: 1/2;
+    grid-row: 2/9;
+    min-height: 150px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+nav a {
+    display: block;
+    margin-top: 40px;
+    margin-left: 2px;
+    text-decoration: none;
+    color: aliceblue ;
+}
+
+a.Kiti4, a.Kiti5, a.Kiti6, a.Kiti7, a.Kiti14, a.Kiti15 {
+    display: inline;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-right: 5px;
+    height: 400px;
+    box-sizing: border-box;
+    border: 10px solid #7D55E6;
+    border-radius: 10px;
+}
+
+.Kiti4 {
+    background: url(../images/Kiti4.jpeg);
+}
+
+.Kiti5 {
+    background-image: url(../images/Kiti5.jpeg);
+}
+
+.Kiti6 {
+    background-image: url(../images/Kiti6.jpeg);
+}
+
+.Kiti7 {
+    background-image: url(../images/Kiti7.jpeg);
+}
+
+.Kiti14 {
+    background: url(../images/Kiti14.jpeg);
+}
+
+.Kiti15 {
+    background-image: url(../images/Kiti15.jpeg);
+}
+
+a {
+    text-decoration: none;
+}
+
+header, footer {
+    background: #7a00cc;
+    height: 100px;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    width: 100%;
+    vertical-align: middle;
+}
+
+footer div {
+    vertical-align: middle;
+}
+
+#feedbackText {
+    color: black;
 }
 
 
+@media screen and (max-width: 768px) {
+    a.Kiti4, a.Kiti5, a.Kiti6, a.Kiti7, a.Kiti14, a.Kiti15 {
+        background-color: #7D55E6;
+        background-image: none;
+        height: 1.5em;
+        font-weight: bold;
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
 
+    nav {
+        grid-row: 2/9;
+    }
 
+    a.Kiti4:hover, a.Kiti5:hover, a.Kiti6:hover, a.Kiti7:hover, a.Kiti14:hover, a.Kiti15:hover {
+        background-color: #d840e6;
+    }
+}
 
+@media screen and (max-width: 576px) {
+    nav {
+        position: absolute;
+        margin-top: 100px;
+        width: 20px;
+        font-size: 0em;
+    }
+ 
+    nav:hover {
+        width: 150px;
+        background-color: #d840e6;
+        border: 2px solid black;
+        box-sizing: border-box;
+        border-radius: 5px;
+        font-size: 20px;
+        height: fit-content;
+    }
+   
+    a.Kiti4, a.Kiti5, a.Kiti6, a.Kiti7, a.Kiti14, a.Kiti15 {
+        grid-column: 1/5;
+        background-image: none;
+    }
 
+    article {
+        grid-column: 1/5;
+    }
+}
 /*
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Nunito:wght@300&display=swap');

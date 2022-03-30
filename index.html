@@ -5,42 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Nunito:wght@300&display=swap"
+        rel="stylesheet">
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="./java/code.js" defer></script>
 
-<title>Document</title>
+<title>Kissala</title>
 </head>
 
 <body>
-    <header>
-        <h1>Kissala</h1>
-    </header>
-
     <div id="content">
+        <header>
+            <h1>Kissalan kissanpäivät</h1>
+        </header>
+
+        <nav>
+            <!--Links is not working, this assignment required only one page.-->
+            <a href="index.html">Etusivu</a>
+            <a href="#">Kuvagalleria</a>
+            <a href="#">Yhteystiedot</a>
+        </nav>
         <article>
-            <div id="text">
-                <h1>Kissanpäivät</h1>
-                <p>Sivun tarkoitus on tuottaa iloa päivääsi ja tuoda hymyn huulillesi</p>
-                <img src="./images/Kiti14.jpeg" alt="Kiti14">
-                <img src="./images/Kiti15.jpeg" alt="Kiti15">
-                <img src="./images/Kiti5.jpeg" alt="Kiti5">
-                <img src="./images/Kiti6.jpeg" alt="Kiti6">
-                <img src="./images/Kiti4.jpeg" alt="Kiti4">
-                <img src="./images/Kiti7.jpeg" alt="Kiti7">
-                <p>Haluatko lukea faktoja kissoista? Paina nappia ja saat aina uuden faktan esille (ainoastaan englanniksi).</p>
-                <button id="factButton">Faktoja Kissoista</button>
-                <div id="facts">
-                    <p></p>
-                </div>
-                <p>Tässä Harry Potter sarjan kissa.</p>
-                <div id="facts2">
-                    <p></p>
-                </div>
-                <div id="facts3"></div>
-            </div>
+            <h2>Tervetuloa</h2>
+            <p>Sivun tarkoitus on tuottaa iloa päivääsi ja tuoda hymyn huulillesi</p>
+        </article>
+
+        <a class="Kiti14" href="./images/Kiti14.jpeg" alt="Kiti14"></a>
+        <a class="Kiti15" href="./images/Kiti15.jpeg" alt="Kiti15"></a>
+        <a class="Kiti5" href="./images/Kiti5.jpeg" alt="Kiti5"></a>
+        <a class="Kiti6" href="./images/Kiti6.jpeg" alt="Kiti6"></a>
+        <a class="Kiti4" href="./images/Kiti4.jpeg" alt="Kiti4"></a>
+        <a class="Kiti7" href="./images/Kiti7.jpeg" alt="Kiti7"></a>
+
+        <article>
+            <p>Haluatko lukea faktoja kissoista? Paina nappia ja saat aina uuden faktan esille (ainoastaan englanniksi).</p>
+            <button id="factButton">Faktoja Kissoista</button>
+            <div id="facts"></div>
+        </article>
+        <article>
+            <p>Tässä Harry Potter sarjan kissa.</p>
+            <div id="facts2"></div>
+            <div id="facts3"></div>
+        </article>
+        <article>
             <p><strong>Tuottiko käynti sivuilla iloa päivääsi?</strong></p>
             <button id="positive">Kyllä tuotti</button>
             <button id="neutral">Osittain</button>
@@ -49,26 +59,11 @@
             <div id="feedbackImage"></div>
             <div id="feedback2"></div>
         </article>
-
-        <nav>
-            <ul>
-                <!--Links is not working, this assignment required only one page.-->
-                <h3>
-                    <li><a href="index.html">Etusivu</a></li>
-                </h3>
-                <h3>
-                    <li><a href="#">Kuva Galleria</a></li>
-                </h3>
-                <h3>
-                    <li><a href="#">Yhteystiedot</a></li>
-                </h3>
-            </ul>
-        </nav>
     </div>
 
     <footer>
-        <h3>Yhteystiedot:</h3>
-        <p>puh: 0441237654 | sähköposti: kissala@gmail.com | Osoite: Kissalankuja 2, 90420 Oulu</p>
+        <p><strong>Yhteystiedot:</strong>
+            <br>puh: 0441237654 | sähköposti: kissala@gmail.com | Osoite: Kissalankuja 2, 90420 Oulu</p>
     </footer>
 </body>
 
